@@ -9,11 +9,16 @@
 #import <UIKit/UIKit.h>
 #import <iAd/iAD.h>
 
-@interface wwViewController : UIViewController <ADBannerViewDelegate>
+@interface wwViewController : UIViewController
+<UIPickerViewDataSource, UIPickerViewDelegate>
 {
-    ADBannerView *adView;
-    BOOL bannerIsVisible;
+    IBOutlet UIPickerView *weightView;
+    NSMutableArray *arrayWeight;
+    
+    NSMutableArray *arrayColors;
+    
+    NSMutableArray *arrayPointOneDecimal;
+    
 }
-@property (nonatomic,assign) BOOL bannerIsVisible;
 
 @end

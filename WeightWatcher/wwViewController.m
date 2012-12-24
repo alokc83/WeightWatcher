@@ -16,17 +16,27 @@
 
 - (void)viewDidLoad
 {
-    adView = [[ADBannerView alloc] initWithFrame:CGRectZero];
-    adView.frame = CGRectOffset(adView.frame, 0, -50);
-    adView.requiredContentSizeIdentifiers = [NSSet setWithObject:ADBannerContentSizeIdentifier320x50];
-   adView.currentContentSizeIdentifier = ADBannerContentSizeIdentifier320x50;
-    [self.view addSubview:adView];
-    adView.delegate=self;
-    self.bannerIsVisible=NO;
-    // all above code is for iAD banner
     
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    arrayColors = [[NSMutableArray alloc] init];
+    [arrayColors addObject:@"Red"];
+    [arrayColors addObject:@"Orange"];
+    [arrayColors addObject:@"Yellow"];
+    [arrayColors addObject:@"Green"];
+    [arrayColors addObject:@"Blue"];
+    [arrayColors addObject:@"Indigo"];
+    [arrayColors addObject:@"Violet"];
+    
+    //loading from plist or property list
+    NSString *myfile = [[NSBundle mainBundle] pathForResource:@"weightlist" ofType:@"plist"];
+    arrayColors = [[NSArray alloc] initWithContentsOfFile:myfile];
+    
+    
+    arrayPointOneDecimal = [[NSArray alloc] initWithObjects:
+                  @".0", @".1", @".3",@".4", @".5", @".6",@".7", @".8", @".9", nil];
+   
 }
 
 - (void)didReceiveMemoryWarning
@@ -35,30 +45,32 @@
     // Dispose of any resources that can be recreated.
 }
 
-// method below is for iAD
 
-- (void)bannerViewDidLoadAd:(ADBannerView *)banner
-{
-    if (!self.bannerIsVisible)
-    {
-        [UIView beginAnimations:@"animateAdBannerOn" context:NULL];
-        // banner is invisible now and moved out of the screen on 50 px
-        banner.frame = CGRectOffset(banner.frame, 0, 50);
-        [UIView commitAnimations];
-        self.bannerIsVisible = YES;
-    }
+//retuerning how many section that picker will be having 
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
+    
+    return 2;
 }
 
-- (void)bannerView:(ADBannerView *)banner didFailToReceiveAdWithError:(NSError *)error
-{
-    if (self.bannerIsVisible)
-    {
-        [UIView beginAnimations:@"animateAdBannerOff" context:NULL];
-        // banner is visible and we move it out of the screen, due to connection issue
-        banner.frame = CGRectOffset(banner.frame, 0, -50);
-        [UIView commitAnimations];
-        self.bannerIsVisible = NO;
-    }
+//PickerViewController.m
+- (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
+    
+    return [arrayPointOneDecimal count];
+}
+
+- (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+        if(component ==0){
+            return [arrayColors objectAtIndex:row];
+        }
+       
+        return [arrayPointOneDecimal objectAtIndex:row];
+       
+}
+
+//Implementation os delgate
+- (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    
+    NSLog(@"Selected Color: %@. Index of selected color: %i", [arrayColors objectAtIndex:row], row);
 }
 
 @end
