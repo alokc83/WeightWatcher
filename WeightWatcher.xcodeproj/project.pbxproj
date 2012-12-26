@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		02673D571688383A00B426C4 /* weightlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02673D561688383A00B426C4 /* weightlist.plist */; };
+		02673DA71689228800B426C4 /* weightlist.plist in Resources */ = {isa = PBXBuildFile; fileRef = 02673DA61689228800B426C4 /* weightlist.plist */; };
 		CA311F361687B54400CE7432 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA311F351687B54400CE7432 /* UIKit.framework */; };
 		CA311F381687B54400CE7432 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA311F371687B54400CE7432 /* Foundation.framework */; };
 		CA311F3A1687B54400CE7432 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA311F391687B54400CE7432 /* CoreGraphics.framework */; };
@@ -23,7 +23,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		02673D561688383A00B426C4 /* weightlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = weightlist.plist; path = ../../../../Katie/Documents/WeightWatcher/WeightWatcher/weightlist.plist; sourceTree = "<group>"; };
+		02673DA61689228800B426C4 /* weightlist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = weightlist.plist; path = ../../../../Katie/Documents/WeightWatcher/WeightWatcher/weightlist.plist; sourceTree = "<group>"; };
 		CA311F311687B54400CE7432 /* WeightWatcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeightWatcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA311F351687B54400CE7432 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		CA311F371687B54400CE7432 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -101,7 +101,7 @@
 		CA311F3C1687B54400CE7432 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				02673D561688383A00B426C4 /* weightlist.plist */,
+				02673DA61689228800B426C4 /* weightlist.plist */,
 				CA311F3D1687B54400CE7432 /* WeightWatcher-Info.plist */,
 				CA311F3E1687B54400CE7432 /* InfoPlist.strings */,
 				CA311F411687B54400CE7432 /* main.m */,
@@ -171,7 +171,7 @@
 				CA311F4C1687B54400CE7432 /* Default-568h@2x.png in Resources */,
 				CA311F4F1687B54400CE7432 /* MainStoryboard_iPhone.storyboard in Resources */,
 				CA311F521687B54400CE7432 /* MainStoryboard_iPad.storyboard in Resources */,
-				02673D571688383A00B426C4 /* weightlist.plist in Resources */,
+				02673DA71689228800B426C4 /* weightlist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

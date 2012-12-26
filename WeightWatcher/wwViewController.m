@@ -31,7 +31,7 @@
     
     //loading from plist or property list
     NSString *myfile = [[NSBundle mainBundle] pathForResource:@"weightlist" ofType:@"plist"];
-    arrayColors = [[NSArray alloc] initWithContentsOfFile:myfile];
+    arrayWeight = [[NSArray alloc] initWithContentsOfFile:myfile];
     
     
     arrayPointOneDecimal = [[NSArray alloc] initWithObjects:
@@ -54,13 +54,16 @@
 
 //PickerViewController.m
 - (NSInteger)pickerView:(UIPickerView *)thePickerView numberOfRowsInComponent:(NSInteger)component {
-    
+    if(component ==0){
+    return [arrayWeight count];
+    }
     return [arrayPointOneDecimal count];
+    
 }
 
 - (NSString *)pickerView:(UIPickerView *)thePickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
         if(component ==0){
-            return [arrayColors objectAtIndex:row];
+            return [arrayWeight objectAtIndex:row];
         }
        
         return [arrayPointOneDecimal objectAtIndex:row];
@@ -71,6 +74,6 @@
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     NSLog(@"Selected Color: %@. Index of selected color: %i", [arrayColors objectAtIndex:row], row);
-}
+    }
 
 @end
